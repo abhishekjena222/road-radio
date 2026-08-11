@@ -7,7 +7,7 @@ const journeys = [
     title: "Truck Drive",
     subtitle: "Long haul radio",
     icon: "🚛",
-    video: "/videos/truck.mp4",
+    video: `${import.meta.env.BASE_URL}/videos/truck.mp4`,
     playlist: "PLgObA3pAqvOh87Z03QG8Z4xE-uqlAWSBy",
   },
   {
@@ -15,7 +15,7 @@ const journeys = [
     title: "Bus Trip",
     subtitle: "A ride through the night",
     icon: "🚌",
-    video: "/videos/bus.mp4",
+    video: `${import.meta.env.BASE_URL}/videos/bus.mp4`,
     playlist: "PLDEqvCb9K2evL_kNHmKn9AZiug0EG1PsI",
   },
   {
@@ -23,7 +23,7 @@ const journeys = [
     title: "Night Drive",
     subtitle: "City lights & late nights",
     icon: "🚗",
-    video: "/videos/night-drive.mp4",
+    video: `${import.meta.env.BASE_URL}/videos/night-drive.mp4`,
     playlist: "PLAhy0J4-jSMXF2rxI7Rl_qfmLW8AzStvl",
   },
   {
@@ -31,7 +31,7 @@ const journeys = [
     title: "Train Journey",
     subtitle: "Watch the world go by",
     icon: "🚆",
-    video: "/videos/train.mp4",
+    video: `${import.meta.env.BASE_URL}/videos/train.mp4`,
     playlist: "PLluqBUTOXDHUjNguM2wgfaVJhC0OHTTqB",
   },
 ];
