@@ -1,0 +1,778 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #080808;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ============================
+   HOME
+============================ */
+
+.home {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 100, 50, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 70, 30, 0.08),
+      transparent 30%
+    ),
+    #080808;
+}
+
+.home-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.85)
+    );
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+
+  width: min(1400px, 92%);
+  height: 90px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  font-weight: 400;
+  opacity: 0.45;
+  margin-left: 4px;
+}
+
+.radio-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+
+  opacity: 0.65;
+}
+
+.live-dot {
+  display: inline-block;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #ff5a36;
+
+  box-shadow:
+    0 0 10px rgba(255, 90, 54, 0.8);
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1400px, 92%);
+
+  margin: auto;
+
+  padding: 70px 0 50px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  color: #ff7048;
+
+  margin-bottom: 18px;
+}
+
+.home h1 {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(55px, 8vw, 110px);
+
+  line-height: 0.88;
+
+  letter-spacing: -5px;
+
+  margin: 0;
+
+  font-weight: 600;
+}
+
+.description {
+  margin-top: 30px;
+
+  font-size: 17px;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.journey-grid {
+  margin-top: 55px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.journey-card {
+  position: relative;
+
+  min-height: 250px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  color: white;
+
+  padding: 25px;
+
+  text-align: left;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border 0.35s ease,
+    background 0.35s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(255, 112, 72, 0.6);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 112, 72, 0.14),
+      rgba(255, 255, 255, 0.04)
+    );
+}
+
+.card-icon {
+  font-size: 42px;
+  margin-bottom: 70px;
+}
+
+.card-info h2 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 22px;
+
+  font-weight: 600;
+}
+
+.card-info p {
+  margin: 7px 0 0;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 13px;
+}
+
+.card-arrow {
+  position: absolute;
+
+  right: 20px;
+  bottom: 20px;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  font-size: 18px;
+}
+
+.home-footer {
+  margin-top: 45px;
+
+  display: flex;
+
+  gap: 10px;
+
+  align-items: center;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================
+   PLAYER
+============================ */
+
+.player {
+  position: fixed;
+  inset: 0;
+
+  overflow: hidden;
+
+  background: #050505;
+}
+
+.background-video {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+.video-dark-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.65),
+      transparent 35%,
+      transparent 60%,
+      rgba(0, 0, 0, 0.92)
+    );
+}
+
+/* ============================
+   HIDDEN YOUTUBE PLAYER
+============================ */
+
+.youtube-hidden {
+  position: absolute;
+
+  width: 200px;
+  height: 200px;
+
+  right: 10px;
+  bottom: 10px;
+
+  overflow: hidden;
+
+  opacity: 0.01;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+.youtube-hidden iframe {
+  width: 200px;
+  height: 200px;
+
+  border: 0;
+}
+
+/* ============================
+   TOP
+============================ */
+
+.player-top {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 25px;
+  left: 35px;
+  right: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.round-button {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(0, 0, 0, 0.45);
+
+  color: white;
+
+  font-size: 20px;
+
+  backdrop-filter: blur(15px);
+
+  transition: 0.25s;
+}
+
+.round-button:hover {
+  background:
+    rgba(255, 255, 255, 0.15);
+}
+
+.journey-name {
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  gap: 8px;
+
+  align-items: center;
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  font-weight: 600;
+}
+
+/* ============================
+   CENTER
+============================ */
+
+.player-center {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 50%;
+  top: 40%;
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  text-shadow:
+    0 3px 25px rgba(0, 0, 0, 0.9);
+}
+
+.radio-pill {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(0, 0, 0, 0.4);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(15px);
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.player-center h1 {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(40px, 6vw, 80px);
+
+  line-height: 1;
+
+  margin: 22px 0 10px;
+
+  letter-spacing: -3px;
+}
+
+.player-center p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 16px;
+}
+
+/* ============================
+   CUSTOM MUSIC PLAYER
+============================ */
+
+.music-player {
+  position: absolute;
+
+  z-index: 10;
+
+  left: 50%;
+  bottom: 35px;
+
+  transform: translateX(-50%);
+
+  width: min(920px, 92vw);
+
+  min-height: 100px;
+
+  padding: 18px 22px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 22px;
+
+  background:
+    rgba(12, 12, 12, 0.72);
+
+  backdrop-filter: blur(25px);
+
+  box-shadow:
+    0 20px 70px rgba(0, 0, 0, 0.55);
+
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    0.8fr;
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+.track-section {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  min-width: 0;
+}
+
+.album-art {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 112, 72, 0.35),
+      rgba(255, 255, 255, 0.06)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+.track-information {
+  min-width: 0;
+}
+
+.track-label {
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color:
+    rgba(255, 112, 72, 0.9);
+
+  font-weight: 700;
+}
+
+.track-title {
+  margin-top: 5px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.track-source {
+  margin-top: 4px;
+
+  font-size: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+}
+
+.player-controls {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+}
+
+.control-button {
+  width: 34px;
+  height: 34px;
+
+  border: 0;
+
+  background: transparent;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  border-radius: 50%;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+.control-button:hover,
+.control-button.active {
+  color: white;
+
+  background:
+    rgba(255, 255, 255, 0.1);
+}
+
+.play-button {
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: black;
+
+  font-size: 16px;
+
+  display: grid;
+
+  place-items: center;
+
+  transition: 0.2s;
+}
+
+.play-button:hover {
+  transform: scale(1.07);
+}
+
+.volume-section {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.volume-section span {
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+}
+
+.volume-section input {
+  width: 100%;
+
+  accent-color: white;
+}
+
+.playlist-position {
+  position: absolute;
+
+  right: 22px;
+  bottom: -22px;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+}
+
+/* ============================
+   MOBILE
+============================ */
+
+@media (max-width: 900px) {
+  .journey-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .music-player {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    padding: 16px;
+
+    bottom: 18px;
+  }
+
+  .track-section {
+    justify-content: center;
+  }
+
+  .player-controls {
+    order: 2;
+  }
+
+  .volume-section {
+    order: 3;
+  }
+
+  .playlist-position {
+    display: none;
+  }
+
+  .player-center {
+    top: 28%;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .home-content {
+    padding-top: 50px;
+  }
+
+  .home h1 {
+    letter-spacing: -3px;
+  }
+
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-card {
+    min-height: 160px;
+  }
+
+  .card-icon {
+    margin-bottom: 35px;
+  }
+
+  .player-top {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+  }
+
+  .journey-name {
+    font-size: 10px;
+  }
+
+  .player-center {
+    top: 20%;
+  }
+
+  .player-center h1 {
+    font-size: 38px;
+  }
+
+  .music-player {
+    width: 94vw;
+  }
+}
+
